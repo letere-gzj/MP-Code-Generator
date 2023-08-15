@@ -1,0 +1,49 @@
+# 全局配置
+global:
+  author: 'letere'
+  # 是否开始swagger注释
+  enableSwagger: false
+
+# 数据源配置
+database:
+  url: 'jdbc:mysql://localhost:3306/model_price'
+  username: 'letere'
+  password: '123456'
+
+# 包名配置
+package:
+  parentName: 'com.letere'
+  moduleName: 'demo'
+  controller: 'controller'
+  service: 'service'
+  serviceImpl: 'service.impl'
+  mapper: 'mapper'
+  xml: 'mapper.xml'
+  entity: 'entity'
+
+# 策略配置
+strategy:
+  # 表名(多个用','隔开，不填默认全表生成)
+  tableNames:
+  controller:
+    # 添加@RestController注解
+    enableRestStyle: true
+    controllerName: '%sController'
+  service:
+    serviceName: '%sService'
+    serviceImplName: '%sServiceImpl'
+  mapper:
+    # 添加@Mapper注解
+    enableMapperAnnotation: false
+    mapperName: '%sMapper'
+    xmlName: '%sMapper'
+  entity:
+    # 生成serialVersionUID
+    enableSerialVersionUid: false
+    # 使用lombok注解
+    enableLombok: true
+    # 去除boolean类型is前缀
+    enableRemoveIsPrefix: true
+    # 使用activeRecord模式
+    enableActiveRecord: false
+    entityName: '%s'
